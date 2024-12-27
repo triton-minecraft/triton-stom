@@ -1,2 +1,2 @@
-rootProject.name = "missile-wars"
+rootProject.name = "triton-stom"
 
