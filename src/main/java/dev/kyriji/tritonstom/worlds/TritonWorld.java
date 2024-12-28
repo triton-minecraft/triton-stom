@@ -10,8 +10,6 @@ import net.minestom.server.instance.anvil.AnvilLoader;
 import net.minestom.server.instance.block.Block;
 import net.minestom.server.instance.generator.Generator;
 
-import java.util.function.Consumer;
-
 public class TritonWorld {
 	private final InstanceContainer instance;
 	private final String name;
@@ -41,7 +39,7 @@ public class TritonWorld {
 		private boolean enableLighting = true;
 		private Generator generator = unit -> unit.modifier().fillHeight(0, 1, Block.SANDSTONE);
 
-		private final TimeKeeper.Builder timeBuilder = TimeManager.get().buildTimeKeeper();
+		private TimeKeeper.Builder timeBuilder = TimeManager.get().buildTimeKeeper();
 
 		Builder(String name) {
 			this.name = name;
@@ -57,8 +55,8 @@ public class TritonWorld {
 			return this;
 		}
 
-		public Builder timeKeeper(Consumer<TimeKeeper.Builder> consumer) {
-			consumer.accept(this.timeBuilder);
+		public Builder timeKeeper(TimeKeeper.Builder timeBuilder) {
+			this.timeBuilder = timeBuilder;
 			return this;
 		}
 

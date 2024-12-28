@@ -6,8 +6,6 @@ import dev.kyriji.tritonstom.worlds.spawn.SpawnManager;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.GameMode;
 
-import java.util.function.Consumer;
-
 public class TritonStom {
 	private static TritonStom INSTANCE;
 
@@ -49,7 +47,7 @@ public class TritonStom {
 
 		private GameMode defaultGameMode = GameMode.SURVIVAL;
 
-		private final PlayerSpawner.Builder spawnerBuilder = SpawnManager.get().buildPlayerSpawner();
+		private PlayerSpawner.Builder spawnerBuilder = SpawnManager.get().buildPlayerSpawner();
 
 		Builder(MinecraftServer server) {
 			this.server = server;
@@ -60,8 +58,8 @@ public class TritonStom {
 			return this;
 		}
 
-		public Builder playerSpawner(Consumer<PlayerSpawner.Builder> consumer) {
-			consumer.accept(this.spawnerBuilder);
+		public Builder playerSpawner(PlayerSpawner.Builder spawnerBuilder) {
+			this.spawnerBuilder = spawnerBuilder;
 			return this;
 		}
 
