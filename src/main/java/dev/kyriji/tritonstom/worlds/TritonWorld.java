@@ -13,22 +13,26 @@ import net.minestom.server.instance.generator.Generator;
 import java.util.function.Consumer;
 
 public class TritonWorld {
-	private final InstanceContainer instanceContainer;
+	private final InstanceContainer instance;
 	private final String name;
 
 	private TimeKeeper timeKeeper;
 
-	private TritonWorld(InstanceContainer container, String name) {
-		this.instanceContainer = container;
+	private TritonWorld(InstanceContainer instance, String name) {
+		this.instance = instance;
 		this.name = name;
 	}
 
-	public InstanceContainer getInstanceContainer() {
-		return instanceContainer;
+	public InstanceContainer getInstance() {
+		return instance;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public TimeKeeper getTimeKeeper() {
+		return timeKeeper;
 	}
 
 	public static class Builder {
@@ -60,13 +64,13 @@ public class TritonWorld {
 
 		public TritonWorld build() {
 			InstanceManager instanceManager = MinecraftServer.getInstanceManager();
-			InstanceContainer container = instanceManager.createInstanceContainer();
+			InstanceContainer instance = instanceManager.createInstanceContainer();
 
-			container.setChunkLoader(new AnvilLoader("data/worlds/" + name));
-			if (enableLighting) container.setChunkSupplier(LightingChunk::new);
-			container.setGenerator(generator);
+			instance.setChunkLoader(new AnvilLoader("data/worlds/" + name));
+			if (enableLighting) instance.setChunkSupplier(LightingChunk::new);
+			instance.setGenerator(generator);
 
-			TritonWorld world = new TritonWorld(container, name);
+			TritonWorld world = new TritonWorld(instance, name);
 			world.timeKeeper = timeBuilder.build(world);
 			WorldManager.get().addWorld(world);
 			return world;

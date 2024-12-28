@@ -23,7 +23,7 @@ public class TimeKeeper {
 		}
 
 		public TimeKeeper build(TritonWorld world) {
-			InstanceContainer container = world.getInstanceContainer();
+			InstanceContainer container = world.getInstance();
 
 			switch (strategy) {
 				case ALWAYS_NOON:
