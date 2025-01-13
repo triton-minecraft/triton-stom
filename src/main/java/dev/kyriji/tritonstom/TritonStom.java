@@ -2,6 +2,7 @@ package dev.kyriji.tritonstom;
 
 import dev.kyriji.tritonstom.player.PlayerManager;
 import dev.kyriji.tritonstom.world.edit.WorldEditManager;
+import dev.kyriji.tritonstom.world.schematic.SchematicManager;
 import dev.kyriji.tritonstom.world.spawn.PlayerSpawner;
 import dev.kyriji.tritonstom.world.spawn.SpawnManager;
 import net.minestom.server.MinecraftServer;
@@ -79,6 +80,7 @@ public class TritonStom {
 			INSTANCE.playerSpawner = spawnerBuilder.build();
 
 			PlayerManager.init();
+			SchematicManager.init();
 
 			return INSTANCE;
 		}

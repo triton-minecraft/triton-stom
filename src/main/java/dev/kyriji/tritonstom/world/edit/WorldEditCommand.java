@@ -53,7 +53,7 @@ public class WorldEditCommand extends Command {
 				return;
 			}
 
-			SchematicManager.get().createSchematic(selection.getInstance(), selection.getFirst().toPos(),
+			SchematicManager.get().saveSchematic(selection.getInstance(), selection.getFirst().toPos(),
 					selection.getSecond().toPos(), schematicName);
 			player.sendMessage("Schematic created: " + schematicName);
 		}, subCommandArgument, schematicNameArgument);
