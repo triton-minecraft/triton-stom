@@ -1,6 +1,7 @@
 package dev.kyriji.tritonstom;
 
 import dev.kyriji.tritonstom.player.PlayerManager;
+import dev.kyriji.tritonstom.world.edit.WorldEditManager;
 import dev.kyriji.tritonstom.world.spawn.PlayerSpawner;
 import dev.kyriji.tritonstom.world.spawn.SpawnManager;
 import net.minestom.server.MinecraftServer;
@@ -45,12 +46,18 @@ public class TritonStom {
 	public static class Builder {
 		private final MinecraftServer server;
 
+		private boolean enableWorldEdit = false;
 		private GameMode defaultGameMode = GameMode.SURVIVAL;
 
 		private PlayerSpawner.Builder spawnerBuilder = SpawnManager.get().buildPlayerSpawner();
 
 		Builder(MinecraftServer server) {
 			this.server = server;
+		}
+
+		public Builder enableWorldEdit() {
+			this.enableWorldEdit = true;
+			return this;
 		}
 
 		public Builder defaultGameMode(GameMode defaultGameMode) {
@@ -67,6 +74,7 @@ public class TritonStom {
 			if (INSTANCE != null) throw new IllegalStateException("TritonStom has already been initialized");
 			INSTANCE = new TritonStom(server);
 
+			if (enableWorldEdit) WorldEditManager.init();
 			INSTANCE.defaultGameMode = defaultGameMode;
 			INSTANCE.playerSpawner = spawnerBuilder.build();
 

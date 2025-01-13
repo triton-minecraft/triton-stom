@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     compileOnly("net.minestom:minestom-snapshots:9803f2bfe3")
-    compileOnly("dev.hollowcube:schem:1.3.1")
+    implementation("dev.hollowcube:schem:1.3.1")
 }
 
 tasks.jar {
