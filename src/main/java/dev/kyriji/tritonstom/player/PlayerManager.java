@@ -1,4 +1,4 @@
-package dev.kyriji.tritonstom.players;
+package dev.kyriji.tritonstom.player;
 
 import dev.kyriji.tritonstom.TritonStom;
 import net.minestom.server.MinecraftServer;

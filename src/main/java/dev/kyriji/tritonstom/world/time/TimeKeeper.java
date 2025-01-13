@@ -1,6 +1,6 @@
-package dev.kyriji.tritonstom.worlds.time;
+package dev.kyriji.tritonstom.world.time;
 
-import dev.kyriji.tritonstom.worlds.TritonWorld;
+import dev.kyriji.tritonstom.world.TritonWorld;
 import net.minestom.server.instance.InstanceContainer;
 
 public class TimeKeeper {

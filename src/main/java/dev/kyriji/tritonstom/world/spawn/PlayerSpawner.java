@@ -1,4 +1,4 @@
-package dev.kyriji.tritonstom.worlds.spawn;
+package dev.kyriji.tritonstom.world.spawn;
 
 public class PlayerSpawner {
 	private SpawnLocationProvider spawnProvider;

@@ -1,7 +1,7 @@
-package dev.kyriji.tritonstom.worlds;
+package dev.kyriji.tritonstom.world;
 
-import dev.kyriji.tritonstom.worlds.time.TimeKeeper;
-import dev.kyriji.tritonstom.worlds.time.TimeManager;
+import dev.kyriji.tritonstom.world.time.TimeKeeper;
+import dev.kyriji.tritonstom.world.time.TimeManager;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.instance.InstanceContainer;
 import net.minestom.server.instance.InstanceManager;

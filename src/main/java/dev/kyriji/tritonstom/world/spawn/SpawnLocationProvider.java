@@ -1,4 +1,4 @@
-package dev.kyriji.tritonstom.worlds.spawn;
+package dev.kyriji.tritonstom.world.spawn;
 
 import net.minestom.server.event.player.AsyncPlayerConfigurationEvent;
 

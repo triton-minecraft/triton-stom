@@ -1,4 +1,4 @@
-package dev.kyriji.tritonstom.worlds.time;
+package dev.kyriji.tritonstom.world.time;
 
 public enum TimeStrategy {
 	NORMAL,

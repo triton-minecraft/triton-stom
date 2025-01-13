@@ -1,8 +1,8 @@
 package dev.kyriji.tritonstom;
 
-import dev.kyriji.tritonstom.players.PlayerManager;
-import dev.kyriji.tritonstom.worlds.spawn.PlayerSpawner;
-import dev.kyriji.tritonstom.worlds.spawn.SpawnManager;
+import dev.kyriji.tritonstom.player.PlayerManager;
+import dev.kyriji.tritonstom.world.spawn.PlayerSpawner;
+import dev.kyriji.tritonstom.world.spawn.SpawnManager;
 import net.minestom.server.MinecraftServer;
 import net.minestom.server.entity.GameMode;
 

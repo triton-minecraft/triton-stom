@@ -1,4 +1,4 @@
-package dev.kyriji.tritonstom.worlds;
+package dev.kyriji.tritonstom.world;
 
 import java.util.ArrayList;
 import java.util.List;
