@@ -13,6 +13,7 @@ import net.minestom.server.instance.generator.Generator;
 public class TritonWorld {
 	private final InstanceContainer instance;
 	private final String name;
+	private boolean allowModification;
 
 	private TimeKeeper timeKeeper;
 
@@ -33,10 +34,15 @@ public class TritonWorld {
 		return timeKeeper;
 	}
 
+	public boolean getAllowModification() {
+		return allowModification;
+	}
+
 	public static class Builder {
 		private final String name;
 
 		private boolean enableLighting = true;
+		private boolean allowModification = true;
 		private Generator generator = unit -> unit.modifier().fillHeight(0, 1, Block.SANDSTONE);
 
 		private TimeKeeper.Builder timeBuilder = TimeManager.get().buildTimeKeeper();
@@ -47,6 +53,11 @@ public class TritonWorld {
 
 		public Builder lighting(boolean enableLighting) {
 			this.enableLighting = enableLighting;
+			return this;
+		}
+
+		public Builder allowModification(boolean allowModification) {
+			this.allowModification = allowModification;
 			return this;
 		}
 
@@ -70,6 +81,7 @@ public class TritonWorld {
 
 			TritonWorld world = new TritonWorld(instance, name);
 			world.timeKeeper = timeBuilder.build(world);
+			world.allowModification = allowModification;
 			WorldManager.get().addWorld(world);
 			return world;
 		}

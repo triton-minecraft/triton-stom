@@ -6,7 +6,9 @@ import java.util.List;
 public class WorldManager {
 	private final List<TritonWorld> worlds = new ArrayList<>();
 
-	private WorldManager() {}
+	private WorldManager() {
+		WorldListener.init();
+	}
 
 	public TritonWorld.Builder buildWorld(String name) {
 		return new TritonWorld.Builder(name);
